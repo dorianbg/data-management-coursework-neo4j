@@ -39,8 +39,7 @@ def run():
         query2(constituency)
 
     elif question == 3:
-        pass
-
+        query3()
 
     elif question == 4:
         pass
@@ -54,13 +53,13 @@ def run():
         pass
 
 
-
 def get_other_input(prompt):
     datainput = None
     while datainput is None:
         datainput = validate_str_input(input(prompt))
     print("We will use your input:", datainput, "\n")
     return datainput
+
 
 def get_input_query():
     question = None
@@ -84,11 +83,13 @@ def query1(constituency):
     res = graph.run("""
         MATCH  (ukc:Ukconst)-[ukr:Ukresult]->(ukp:Ukparty) 
         WHERE ukc.ukarea = "{}"
+        WITH max(ukr.ukvotes) as max_votes
+        MATCH  (ukc:Ukconst)-[ukr:Ukresult]->(ukp:Ukparty) 
+        WHERE ukr.ukvotes = max_votes
         RETURN ukp.party
-        ORDER BY ukr.ukvotes DESC
-        LIMIT 1
     """.format(constituency)).to_table()
     print(res)
+
 
 def query2(constituency):
     res = graph.run("""
@@ -98,11 +99,20 @@ def query2(constituency):
         ORDER BY ukr.ukvotes DESC
     """.format(constituency)).to_table()
     print(res)
-    pass
 
 
 def query3():
-    pass
+    res = graph.run("""
+        MATCH  (ukc:Ukconst)-[ukr:Ukresult]->(ukp:Ukparty) 
+        WITH ukc.ukarea as ukarea, max(ukr.ukvotes) as max_votes
+        MATCH  (ukc:Ukconst)-[ukr:Ukresult]->(ukp:Ukparty) 
+        WHERE ukc.ukarea = ukarea and ukr.ukvotes = max_votes
+        WITH ukp.party as party, count(*) as constituencies_won
+        RETURN party, constituencies_won
+        ORDER BY constituencies_won DESC
+        LIMIT 1
+    """).to_table()
+    print(res)
 
 
 def query4():
