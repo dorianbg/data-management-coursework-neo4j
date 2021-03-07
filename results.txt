@@ -1,0 +1,140 @@
+i) Which party won the “cambridge” constituency?
+
+ winning_party_in_constituency
+-------------------------------
+ con
+
+
+ii) Which parties contested “angus east” and how many votes did they each receive?
+
+ party | num_votes
+-------|-----------
+ con   |     19218
+ snp   |     15691
+ sdp   |      4978
+ lab   |      3497
+ eco   |       239
+
+iii) Which party won the election?
+
+ winning_party
+---------------
+ con
+
+
+iv) Which parties contested the election, and how many constituencies did they each win?
+
+--> Did not know this one
+
+v) In which constituencies did the “eco” party lose its deposit?
+
+ constituencies_where_party_lost_deposit
+-----------------------------------------
+ aberdeen north
+ altrincham and sale
+ angus east
+ ashford
+ bath
+ batley and spen
+ battesea
+ bexhill and battle
+ birkenhead
+ birmingham edgbaston
+ bournemouth east
+ bradford south
+ bridlington
+ bristol east
+ bristol west
+ bromsgrove
+ canterbury
+ cardiff west
+ carmarthen
+ carshalton and wallington
+ ceredigion and pembroke north
+ cheltenham
+ chichester
+ chingford
+ chipping barnet
+ chorley
+ city of london and westminster south
+ corby
+ cornwall south east
+ crosby
+ croydon north west
+ derby south
+ devon north
+ dover
+ dulwich
+ dundee west
+ dunfermline west
+ edinburgh pentlands
+ edinburgh south
+ enfield north
+ epping forest
+ exeter
+ fife central
+ fife north east
+ fulham
+ gainsborough and horncastle
+ gloucester
+ gravesham
+ hackney north and stoke newington
+ halesowen and stourbridge
+ hammersmith
+ harborough
+ hereford
+ hornchurch
+ hornsey and wood green
+ horsham
+ huntingdon
+ hyndburn
+ keighley
+ kensington
+ kingston upon thames
+ leeds north west
+ leicester north west
+ leicester south
+ leominster
+ lewes
+ lewisham east
+ loughborough
+ milton keynes
+ newark
+ newcastle upon tyne central
+ northavon
+ norwich south
+ nuneaton
+ ogmore
+ oxford west and abingdon
+ paisley north
+ paisley south
+ pembroke
+ peterborough
+ plymouth sutton
+ pontypridd
+ putney
+ reading east
+ reigate
+ rushcliffe
+ rutland and melton
+ shipley
+ slough
+ south hams
+ st ives
+ stockport
+ surbiton
+ swansea west
+ tooting
+ twickenham
+ walthamstow
+ wanstead and woodford
+ warrington south
+ warwick and leamington
+ westbury
+ westminster north
+ westmorland and lonsdale
+ wiltshire north
+ wimbledon
+ worcestershire south
+
+** note that I implemented question 6 but it's too large for pasting here
